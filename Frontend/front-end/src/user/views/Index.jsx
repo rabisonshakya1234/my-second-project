@@ -1,4 +1,4 @@
-import TabelRow from "user/components/TabelRow";
+import TableRow from "user/components/TableRow";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,8 +8,7 @@ function Index() {
     const  [users, setUsers] = useState([]);
 
    useEffect(() => {
-    axios.get('http://localhost:5000/api/user')
-    .then(res => {
+    axios.get('http://localhost:5000/api/user').then(res => {
         setUsers(res.data);
         console.log(res.data);
     })
@@ -21,7 +20,7 @@ function Index() {
 
   const delData = async(id) => {
     try{
-        await axios.delete(`http://localhost:5000/api/user/${id}`)
+        const res = await axios.delete(`http://localhost:5000/api/user/${id}`)
         setUsers(res.data);
         console.log(res.data);
     }catch(err){

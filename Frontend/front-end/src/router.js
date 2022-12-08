@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import UserIndex from "./user/views/Index";
 import CategoryIndex from "./category/views/Index";
-import Layout from "Layout";
+import Layout from "common/Layout";
 
 import Login from "auth/Login";
 import Protected from "auth/Protected";
