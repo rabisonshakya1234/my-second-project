@@ -4,7 +4,7 @@ function Home()
 {
     const navigate = useNavigate();
     const data = 1;
-    if(data == 1)
+    if(data === 1)
     {
         return(<h1>Home </h1>)
     }else{

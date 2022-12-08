@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {toast} from 'react-toastify';
 import Input from 'common/Input';
 import  axios from 'axios';
@@ -18,7 +18,7 @@ function Create() {
         password: "",
         role: ""
     });
-    const [errors, setErrors] = useState({})
+    const [errors] = useState({})
 
     const handleChange =  ({target}) => {
         setData({
@@ -38,10 +38,10 @@ function Create() {
         }
     }
 
-    const validPassword = () => {
-        let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-        return re.test(data.password);
-    }
+    // const validPassword = () => {
+    //     let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    //     return re.test(data.password);
+    // }
     const addUser = async () => {
         
             try{

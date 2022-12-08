@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import TabelRow from "components/TableRow";
+import TableRow from "../components/TableRow";
 
 function Index() {
     const [categories, setCategories] = useState([]);
 
     const getData = async() => {
-        const token = locatStorage.getItem('access-token');
+        const token = localStorage.getItem('access-token');
         const config = {
             headers: { Authorization: `Bearer ${JSON.parse(token)} `}
         };
@@ -49,7 +49,7 @@ return (
         <tbody>
             {
                 categories.map((category)=> {
-                    return <TabelRow key={category._id} handler={() => delData(category._id)} name={category.name} />
+                    return <TableRow key={category._id} handler={() => delData(category._id)} name={category.name} />
                 })
             }
         </tbody>
